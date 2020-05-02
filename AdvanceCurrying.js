@@ -1,11 +1,6 @@
 import _ from 'lodash';
 
-let dragons = [
-  { name: 'fluffykins', element: 'lightning' },
-  { name: 'noomi', element: 'lightning' },
-  { name: 'karo', element: 'fire' },
-  { name: 'doomer', element: 'timeWarp' },
-];
+import { dragons } from './index.js';
 
 /* Normal Implementation with Filter: */
 let hasElement = (element, obj) => obj.element === element;
