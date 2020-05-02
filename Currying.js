@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 // Normal Function:
 let dragon = (name, size, element) =>
   name + ' is a ' +
@@ -34,4 +36,15 @@ let fluffykinsDragon = curryingDragon("fluffykins");
 let tinyDragon = fluffykinsDragon("tiny");
 
 console.log('Return from Separate Functions :',tinyDragon('lighting'));
+console.log("--------");
+console.log("--------");
+
+
+/* Making Currying Functions with Lodash: */
+dragon = _.curry(dragon);
+console.log(
+  "Making Currying Functions with Lodash: ",
+  dragon("fluffykins")("tiny")("lightning")
+);
+console.log("---");
 
