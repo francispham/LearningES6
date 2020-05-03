@@ -13,3 +13,10 @@ export const animals = [
   { name: "Ursula", species: "cat" },
   { name: "Jimmy", species: "fish" },
 ];
+
+export const orders = [
+  { amount: 250 },
+  { amount: 400 },
+  { amount: 100 },
+  { amount: 325 },
+]; 
