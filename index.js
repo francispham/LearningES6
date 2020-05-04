@@ -20,3 +20,14 @@ export const orders = [
   { amount: 100 },
   { amount: 325 },
 ]; 
+
+export const categories = [
+  { id: "animals", parent: null },
+  { id: "animals", parent: "animals" },
+  { id: "cats", parent: "mammals" },
+  { id: "dogs", parent: "mammals" },
+  { id: "chihuahua", parent: "dogs" },
+  { id: "labrador", parent: "dogs" },
+  { id: "persian", parent: "cats" },
+  { id: "siamese", parent: "cats" },
+];
