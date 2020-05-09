@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import { dragons } from './index.js';
+import { dragons } from '../index.js';
 
 /* Normal Implementation with Filter: */
 let hasElement = (element, obj) => obj.element === element;

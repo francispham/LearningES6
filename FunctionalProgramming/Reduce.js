@@ -1,4 +1,4 @@
-import { orders } from './index.js';
+import { orders } from '../index.js';
 
 // Introduce Reduce Method:
 let reduceTotalAmount = orders.reduce(function(sum, order) {

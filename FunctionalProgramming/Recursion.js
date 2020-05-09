@@ -1,4 +1,4 @@
-import { categories } from "./index.js";
+import { categories } from "../index.js";
 
 let makeTree = (categories, parent) => {
   let node = {};

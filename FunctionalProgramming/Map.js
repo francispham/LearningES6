@@ -1,4 +1,4 @@
-import { animals } from './index.js';
+import { animals } from '../index.js';
 
 // Introduced Map Method:
 let mapNames = animals.map(function (animal) {
