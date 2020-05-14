@@ -35,13 +35,53 @@ class HashTable {
 
     return undefined;
   }
-}
 
-const myHashTable = new HashTable(2);
-// console.log(myHashTable._hash('grapes'));
+  keys() {
+    const keysArray = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if(this.data[i]) {
+        // console.log(this.data[i]);
+        keysArray.push(this.data[i][0][0]);
+      };
+    };
+    return keysArray;
+  };
 
-myHashTable.set('grapes', 10000)
-myHashTable.set('apple', 45)
+  // Keys Without Hash Collision:
+  keysEnhanced() {
+    if (!this.data.length) {
+      return undefined;
+    }
+    let result = [];
+    // Loop through All the Elements
+    for (let i = 0; i < this.data.length; i++) {
+      // If It's not an Empty Memory Cell
+      if (this.data[i] && this.data[i].length) {
+        // But also Loop through All the Potential Collisions
+        if (this.data.length > 1) {
+          for (let j = 0; j < this.data[i].length; j++) {
+            result.push(this.data[i][j][0]);
+          }
+        } else {
+          result.push(this.data[i][0]);
+        }
+      }
+    }
+    return result;
+  }
+};
+
+const myHashTable = new HashTable(50);
+
+myHashTable.set('grapes', 10000);
+myHashTable.set('apple', 45);
+myHashTable.set('orange', 2);
+
+console.log('Keys: ', myHashTable.keys());
+console.log('Keys Enhanced: ', myHashTable.keysEnhanced());
+
+console.log('Get Value of Apple: ', myHashTable.get('apple'));
+
+console.log("Grapes' Hash: ", myHashTable._hash('grapes'));
 
 console.log('Buckets: ', myHashTable.data);
-console.log('Get Value of Apple: ', myHashTable.get('apple'));
