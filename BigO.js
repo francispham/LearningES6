@@ -56,3 +56,19 @@ user.spell = 'Umbala';             // O(1)
 user.scream();                     // O(1)
 
 // Hash Collision:                 // O(n)
+
+/*
+Linked List Operations:
+  PREPEND:   O(1)
+  APPEND:    O(1)
+  LOOKUP:    O(n)
+  INSERT:    O(n)
+  DELETE:    O(n)
+*/ 
+
+const obj1 = { a: true };
+const obj2 = obj1;  //  Obj2 is a Pointer because it prefer to Obj1.
+obj1.a = 'booya';   //  And both point to the same Location in Memory.
+
+console.log('Obj1: ', obj1)
+console.log('Obj2: ', obj2)
