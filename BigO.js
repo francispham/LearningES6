@@ -93,7 +93,7 @@ LIFO
 */
 
 /*
-Stack Operations:
+Queue Operations:
   LOOKUP:    O(n)
   ENQUEUE:   O(1)
   DEQUEUE:   O(1)

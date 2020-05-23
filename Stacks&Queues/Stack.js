@@ -1,3 +1,4 @@
+/* Stack Implementation of Linked List */ 
 class Node {
   constructor(value) {
     this.value = value;
@@ -53,3 +54,32 @@ myStack.pop();
 myStack.pop();
 myStack.pop();
 console.log('After Removing 3 Items: ', myStack);
+
+/* Stack Implementation of Array */ 
+class StackArray {
+  constructor() {
+    this.array = [];
+  }
+
+  peek() {
+    return this.array[this.array.length - 1];
+  }
+
+  push(value) {
+    this.array.push(value);
+  }
+
+  pop() {
+    this.array.pop();
+    return this;
+  }
+};
+
+const myStackArray = new StackArray();
+myStackArray.push('Google');
+myStackArray.push('Udemy');
+myStackArray.push('Discord');
+myStackArray.pop();
+
+console.log('Stack from Array: ', myStackArray);
+console.log("Peek: ", myStackArray.peek());
