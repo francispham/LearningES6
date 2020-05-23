@@ -58,7 +58,7 @@ user.scream();                     // O(1)
 // Hash Collision:                 // O(n)
 
 /*
-Linked List Operations:
+Single Linked List Operations:
   PREPEND:   O(1)
   APPEND:    O(1)
   LOOKUP:    O(n)
@@ -72,3 +72,32 @@ obj1.a = 'booya';   //  And both point to the same Location in Memory.
 
 console.log('Obj1: ', obj1)
 console.log('Obj2: ', obj2)
+
+/*
+Doubly Linked List Operations:
+  PREPEND:   O(1)
+  APPEND:    O(1)
+  LOOKUP:    O(n) => Faster than Single Linked List. O(n/2) -> O(n)
+  INSERT:    O(n)
+  DELETE:    O(n)
+*/
+
+/*
+Stack Operations:
+  LOOKUP:    O(n)
+  POP:       O(1)
+  PUSH:      O(1)
+  PEEK:      O(1)
+
+LIFO
+*/
+
+/*
+Stack Operations:
+  LOOKUP:    O(n)
+  ENQUEUE:   O(1)
+  DEQUEUE:   O(1)
+  PEEK:      O(1)
+
+FIFO
+*/ 
