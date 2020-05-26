@@ -1,4 +1,4 @@
-/* Stack Implementation of Linked List */ 
+/* Implementation Stack using Linked List */
 class Node {
   constructor(value) {
     this.value = value;
@@ -55,7 +55,7 @@ myStack.pop();
 myStack.pop();
 console.log('After Removing 3 Items: ', myStack);
 
-/* Stack Implementation of Array */ 
+/* Implementation Stack using Array */
 class StackArray {
   constructor() {
     this.array = [];
