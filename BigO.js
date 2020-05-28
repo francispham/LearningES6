@@ -101,3 +101,12 @@ Queue Operations:
 
 FIFO
 */ 
+
+
+/*
+Tree Data Structures:
+  Binary Search Tree Operations:
+    LOOKUP:    O(log N)
+    INSERT:    O(log N)
+    DELETE:    O(log N)
+*/ 
