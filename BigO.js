@@ -1,17 +1,18 @@
                   /*  Big O: https://www.bigocheatsheet.com/ */
 
 /* 
-Static Array Operations: 
-  LOOKUP:   O(1)
-  PUSH:     O(1)
-  INSERT:   O(n)
-  DELETE:   O(n)
+ARRAYS:
+  + Static Array Operations: 
+    LOOKUP:   O(1)
+    PUSH:     O(1)
+    INSERT:   O(n)
+    DELETE:   O(n)
 
-Dynamic Array Operations (eg. You can find in C++):
-  LOOKUP:   O(1)
-  APPEND:   O(1)  can be O(n) ***
-  INSERT:   O(n)
-  DELETE:   O(n)
+  + Dynamic Array Operations (eg. You can find in C++):
+    LOOKUP:   O(1)
+    APPEND:   O(1)  can be O(n) ***
+    INSERT:   O(n)
+    DELETE:   O(n)
 
   SPACE: O(n)
 */
@@ -31,8 +32,9 @@ strings.splice(2, 0, 'alien');      // O(n)
 
 console.log('String: ', strings);
 
+
 /*
-Hash Tables Operation:
+HASH TABLES Operation:
   LOOKUP:   O(1)  Incase of Hash Collusion, LOOKUP becomes TRAVERSE:   O(N)
   SEARCH:   O(1)
   INSERT:   O(1)
@@ -57,15 +59,23 @@ user.scream();                     // O(1)
 
 // Hash Collision:                 // O(n)
 
-/*
-Single Linked List Operations:
-  PREPEND:   O(1)
-  APPEND:    O(1)
-  LOOKUP:    O(n)
-  INSERT:    O(n)
-  DELETE:    O(n)
-*/ 
 
+/*
+LINKED LISTS:
+  + Single Linked List Operations:
+    PREPEND:   O(1)
+    APPEND:    O(1)
+    LOOKUP:    O(n)
+    INSERT:    O(n)
+    DELETE:    O(n)
+    
+  + Doubly Linked List Operations:
+    PREPEND:   O(1)
+    APPEND:    O(1)
+    LOOKUP:    O(n) => Faster than Single Linked List. O(n/2) -> O(n)
+    INSERT:    O(n)
+    DELETE:    O(n)
+*/
 const obj1 = { a: true };
 const obj2 = obj1;  //  Obj2 is a Pointer because it prefer to Obj1.
 obj1.a = 'booya';   //  And both point to the same Location in Memory.
@@ -73,17 +83,9 @@ obj1.a = 'booya';   //  And both point to the same Location in Memory.
 console.log('Obj1: ', obj1)
 console.log('Obj2: ', obj2)
 
-/*
-Doubly Linked List Operations:
-  PREPEND:   O(1)
-  APPEND:    O(1)
-  LOOKUP:    O(n) => Faster than Single Linked List. O(n/2) -> O(n)
-  INSERT:    O(n)
-  DELETE:    O(n)
-*/
 
 /*
-Stack Operations:
+STACKS Operations:
   LOOKUP:    O(n)
   POP:       O(1)
   PUSH:      O(1)
@@ -92,8 +94,9 @@ Stack Operations:
 LIFO
 */
 
+
 /*
-Queue Operations:
+QUEUES Operations:
   LOOKUP:    O(n)
   ENQUEUE:   O(1)
   DEQUEUE:   O(1)
@@ -104,9 +107,17 @@ FIFO
 
 
 /*
-Tree Data Structures:
-  Binary Search Tree Operations:
+TREES:
+  + Binary Search Tree Operations:
     LOOKUP:    O(log N)
     INSERT:    O(log N)
     DELETE:    O(log N)
-*/ 
+
+  + Binary Heap Tree Operations:
+    LOOKUP:    O(n)
+    INSERT:    O(log N)
+    DELETE:    O(log N)
+
+  + Trie Tree Operations (Used in TEXT Searching):
+    O(Length of the Word)
+*/
