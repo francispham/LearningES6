@@ -16,3 +16,34 @@ function inception() {
 };
 
 inception();
+
+
+/*
+Interview Question:
+Write 2 Functions that finds the Factorial of any Number. One should use Recursive,
+the other should just use a for Loop.
+*/
+function findFactorialRecursive(number) {
+  if (number === 2) {
+    return 2;
+  };
+
+  return number * findFactorialRecursive(number - 1);
+};
+
+function findFactorialIterative(number) {
+  let answer = 1;
+  if (number === 2) {
+    return 2;
+  };
+  for (let i = 2; i <= number; i++) {
+    answer = answer * i;
+  }
+
+  return answer;
+};
+
+let AnswerRecursive = findFactorialRecursive(5);
+let AnswerIterative = findFactorialIterative(5);
+console.log('Recursive: ', AnswerRecursive);
+console.log('Iterative; ', AnswerIterative);
