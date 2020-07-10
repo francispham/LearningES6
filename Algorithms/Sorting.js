@@ -35,4 +35,22 @@ console.log(numbers);
 
 
 /* Selection Sort: */
+function selection(array) {
+  const length = array.length;
+  for (let i = 0; i < length; i++) {
+    // Set the Current Index as the Smallest Number
+    let min = i;
+    let temp = array[i];
+    for (let j = i + 1; j < length; j++) {
+      if (array[j] < array[min]) {
+        // Update Selected Number if Current is Lower than the Previous One
+        min = j;
+      }
+    }
+    array[i] = array[min];
+    array[min] = temp;
+  }
+  return array;
+}
 
+selection(numbers);
