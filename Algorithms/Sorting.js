@@ -80,6 +80,7 @@ function insertionSort(array) {
 insertionSort(numbers);
 console.log(numbers);
 
+
 /* Merge Sort: O(n log(n)) */
 function mergeSort(array) {
   if (array.length === 1) {
@@ -118,3 +119,44 @@ function merge(left, right) {
 
 const answer = mergeSort(numbers);
 console.log('answer:', answer);
+
+
+/* Quick Sort: O(n log(n)) */
+function quickSort(array, left, right) {
+  let pivot;
+  let partitionIndex;
+
+  if (left < right) {
+    pivot = right;
+    partitionIndex = partition(array, pivot, left, right);
+
+    // Sort Left & Right
+    quickSort(array, left, partitionIndex - 1);
+    quickSort(array, partitionIndex + 1, right);
+  };
+  return array;
+};
+
+function partition(array, pivot, left, right) {
+  let pivotValue = array[pivot];
+  let partitionIndex = left;
+
+  for (let i = left; i < right; i++) {
+    if (array[i] < pivotValue) {
+      swap(array, i, partitionIndex);
+      partitionIndex++;
+    };
+  };
+  swap(array, right, partitionIndex);
+  return partitionIndex;
+};
+
+function swap(array, firstIndex, secondIndex) {
+  let temp = array[firstIndex];
+  array[firstIndex] = array[secondIndex];
+  array[secondIndex] = temp;
+};
+
+// Select First & Last Index as 2nd & 3rd Parameters:
+quickSort(numbers, 0, numbers.length - 1);
+console.log('numbers:', numbers);
