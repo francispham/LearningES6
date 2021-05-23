@@ -114,3 +114,66 @@ function smallestSize(array, s) {
   return minSize;
 };
 //console.log(smallestSize(randomArray, 60));
+
+
+/* III. Binary Search */
+/* 1. Find Index of a Number in a Sorted Array without Duplicated Numbers (Improve from O(n) => O(log(n))): */ 
+function binarySearch(array, target) {
+  let leftPointer = 0;
+  let rightPointer = array.length - 1;
+  
+  while (leftPointer <= rightPointer) {
+    let midPointer = Math.floor((leftPointer + rightPointer) /2)
+    
+    if (array[midPointer] == target) {
+      return midPointer;
+    }
+    if (array[midPointer] < target) {
+      leftPointer = midPointer + 1;
+    } else {
+      rightPointer = midPointer - 1;
+    }
+  }
+  return -1;
+};
+// console.log(binarySearch(sortedArray, 7));
+
+// Find Index of a Number in a Sorted Array with Duplicated Numbers (Improve from O(n) => O(log(n))):
+function binarySearchForDuplicates(array, target) {
+  let left_index = -1;
+  let right_index = -1;
+
+  // Looking for Leftmost Index of the Target
+    let leftPointer = 0;
+    let rightPointer = array.length - 1;
+    while (leftPointer <= rightPointer) {
+      let midPointer = Math.floor((leftPointer + rightPointer) /2);
+      if (array[midPointer] == target) {
+        left_index = midPointer;
+        rightPointer = midPointer - 1;
+      } else if (array[midPointer] < target) {
+        leftPointer = midPointer + 1;
+      } else {
+        rightPointer = midPointer - 1;
+      }
+    };
+  
+  // Looking for Rightmost index of the Target
+    // leftPointer = 0;
+    rightPointer = array.length - 1;
+    while (leftPointer <= rightPointer) {
+      let midPointer = Math.floor((leftPointer + rightPointer) /2);
+      if (array[midPointer] == target) {
+        right_index = midPointer;
+        leftPointer = midPointer + 1;
+      } else if (array[midPointer] < target) {
+        leftPointer = midPointer + 1;
+      } else {
+        rightPointer = midPointer - 1;
+      }
+    }
+
+  return [left_index, right_index];
+};
+// console.log(binarySearchForDuplicates(sortedDuplicatedNumbersArray, 9));
+// console.log(binarySearchForDuplicates(sortedDuplicatedNumbersArray, 19));
