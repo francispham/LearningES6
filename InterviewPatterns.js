@@ -177,3 +177,67 @@ function binarySearchForDuplicates(array, target) {
 };
 // console.log(binarySearchForDuplicates(sortedDuplicatedNumbersArray, 9));
 // console.log(binarySearchForDuplicates(sortedDuplicatedNumbersArray, 19));
+
+
+/* IV. Intervals */
+const arrayOfIntervals = [[1, 3], [4, 6], [8, 10], [9, 18]];
+const newIntervalArray = [5, 9];
+
+/*  1. Given an Array of Meetings represented by Arrays of length 2 with a Start Time and an End Time, 
+return True if any of the Meetings overlap, and False if none of the Meetings overlap:  */ 
+function overlappingMeetings(meetings) {
+  meetings.sort();
+  console.log('meetings.sort():', meetings.sort());
+  for (let i = 1; i < meetings.length; i++) {
+    let meetingA = meetings[i - 1];
+    let meetingB = meetings[i];
+    if (meetingA[1] > meetingB[0]) {
+      return true;
+    };
+  };
+  return false;
+};
+// console.log(overlappingMeetings(arrayOfIntervals));
+
+/*  2. Given an Array of Intervals, merge any Overlapping Intervals and return the New Array: */
+function merge(intervals) {
+  intervals.sort();
+  const mergedIntervals = [];
+  for (const interval of intervals) {
+    if (mergedIntervals.length == 0 || mergedIntervals[mergedIntervals.length - 1][1] < interval[0]) {
+      mergedIntervals.push(interval);
+    } else {
+      mergedIntervals[mergedIntervals.length - 1][1] = Math.max(mergedIntervals[mergedIntervals.length - 1][1], interval[1]);
+    }
+  }
+  return mergedIntervals;
+};
+// console.log(merge(arrayOfIntervals));
+
+/*  3. Give a Sorted Array of non-overlapping intervals, insert a new Interval into the correct position, 
+merge anything that overlap after the insertion, and return the new array:  */
+function insert(intervals, newInterval) {
+  const mergedIntervals = [];
+  let i = 0;
+  while (i < intervals.length && newInterval[0] > intervals[i][0]) {
+    mergedIntervals.push(intervals[i]);
+    i++;
+  };
+
+  if (mergedIntervals.length == 0 || mergedIntervals[mergedIntervals.length - 1][1] < newInterval[0]) {
+    mergedIntervals.push(newInterval);
+  } else {
+    mergedIntervals[mergedIntervals.length - 1][1] = Math.max(mergedIntervals[mergedIntervals.length - 1][1], newInterval[1]);
+  };
+
+  while (i < intervals.length) {
+    if (mergedIntervals[mergedIntervals.length - 1][1] < intervals[i][0]) {
+      mergedIntervals.push(intervals[i]);
+    } else {
+      mergedIntervals[mergedIntervals.length - 1][1] = Math.max(mergedIntervals[mergedIntervals.length - 1][1], intervals[i][1]);
+    }
+    i++;
+  };
+  return mergedIntervals;
+};
+// console.log(insert(arrayOfIntervals, newIntervalArray));
