@@ -76,3 +76,41 @@ function sortedSquaredArray(array) {
   return result;
 };
 // console.log(sortedSquaredArray(sortedNegativeNumbersArray));
+
+
+/* II. Sliding Window Technique */ 
+/*  1. Given an Array of Integers, return the Maximum Sum Subarray of Size k: */
+function maxSumSubarray(array, k) {
+  let maxSum = Number.MIN_VALUE;
+  let startPoint = 0;
+  let currentSum = 0;
+  
+  for (let endPoint = 0; endPoint < array.length; endPoint++) {
+    currentSum += array[endPoint];
+    if (endPoint - startPoint + 1 === k) {
+      maxSum = Math.max(maxSum, currentSum);
+      currentSum -= array[startPoint];
+      startPoint++;
+    };
+  };
+  return maxSum;
+};
+// console.log(maxSumSubarray(randomArray, 3));
+
+/*  2. Given an Array of Positive Integers, return the Size of the Smallest Contiguous Subarray with a sum >= s: */
+function smallestSize(array, s) {
+  let minSize = Number.MAX_VALUE;
+  let startPoint = 0;
+  let currentSum = 0;
+
+  for (let endPoint = 0; endPoint < array.length; endPoint++) {
+    currentSum += array[endPoint];
+    while (currentSum >= s) {
+      minSize = Math.min(minSize, endPoint - startPoint + 1);
+      currentSum -= array[startPoint];
+      startPoint++;
+    }
+  }
+  return minSize;
+};
+//console.log(smallestSize(randomArray, 60));
