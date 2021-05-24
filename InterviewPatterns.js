@@ -241,3 +241,86 @@ function insert(intervals, newInterval) {
   return mergedIntervals;
 };
 // console.log(insert(arrayOfIntervals, newIntervalArray));
+
+
+/* V. String Patterns */ 
+const randomString = 'aaabccccdeeef';
+
+/*  1. Given a String, return the Character that is least commonly used in the String.
+  Ex: minChar('aabcccccccdd') === 'b';
+      minChar('appllee 1233211111') === 'a';
+*/ 
+function findMinChar(string) {
+  let len = string.length;
+
+  for (let i = 0; i < len; i++) {
+    if(string.indexOf(string.charAt(i)) === string.lastIndexOf(string.charAt(i))) {
+      return string.charAt(i);
+    }
+  }
+  return '_';
+};
+// console.log(findMinChar(randomString));
+
+/*  2. String to Object Technique: */ 
+const charsObject = {};
+
+for (let char of randomString) {
+  /*  Basic: 
+  if (!charsObject[char]) {
+    charsObject[char] = 1;
+  } else {
+    charsObject[char]++;
+  };
+  */
+  charsObject[char] = charsObject[char] + 1 || 1;
+};
+// console.log('charsObject:', charsObject);
+/*  Given a String, return the Character that is most commonly used in the String.
+    Ex: maxChar('abcccccccd') === 'c';
+        maxChar('apple 12311111') === '1';
+*/ 
+function findMaxChar(string) {
+  const charMap = {};
+  let max = 0;
+  let maxChar = "";
+
+  for (let char of string) {
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
+};
+// console.log(findMaxChar(randomString));
+
+/*  Write a function that finds the zero-based index of the longest run in a string. 
+A run is a consecutive sequence of the same character. If there is more than one run with the same length, 
+return the index of the first one.
+  Ex: IndexOfLongestRun("abbcccddddcccbba") should return 6 as 
+  the longest run is dddd and it first appears on index 6.
+*/
+function IndexOfLongestRun(string) {
+  let subArr = [0, 1];
+  const array = [subArr];
+	for (i = 0; i < string.length - 1; i++) {
+		if (string[i] == string[i + 1]) {
+      subArr[1]++
+    } else {
+      subArr = [i + 1, 1];
+      array.push(subArr);
+    }
+  }
+
+  let numArr = [];
+  array.forEach(item => numArr.push(item[1]));
+  const maxVal = Math.max(...numArr);
+  return array.find(item => item[1] == maxVal)[0];
+};
+// console.log(IndexOfLongestRun(randomString));
+
