@@ -32,28 +32,27 @@ class Queue {
 
   dequeue() {
     if (!this.first) {
-      return null
-    };
+      return null;
+    }
     if (this.first === this.last) {
       this.last = null;
-    };
+    }
     this.first = this.first.next;
     this.length--;
     return this;
   }
-};
+}
 
 const myQueue = new Queue();
-myQueue.enqueue('Francis');
-myQueue.enqueue('X');
-myQueue.enqueue('Y');
+myQueue.enqueue("Francis");
+myQueue.enqueue("X");
+myQueue.enqueue("Y");
 myQueue.dequeue();
 
-console.log('Peek: ', myQueue.peek());
-console.log('Queue: ', myQueue);
+console.log("Peek: ", myQueue.peek());
+console.log("Queue: ", myQueue);
 
-
-/* Implement Queue using Stack */ 
+/* Implement Queue using Stack */
 class StackQueue {
   constructor() {
     this.first = [];
@@ -84,13 +83,13 @@ class StackQueue {
     this.first.pop();
     return this;
   }
-};
+}
 
 const myStackQueue = new StackQueue();
-myStackQueue.enqueue('Francis');
-myStackQueue.enqueue('Phong');
-myStackQueue.enqueue('Pham');
+myStackQueue.enqueue("Francis");
+myStackQueue.enqueue("Phong");
+myStackQueue.enqueue("Pham");
 myStackQueue.dequeue();
 
-console.log('SQPeek: ', myStackQueue.peek());
-console.log('StackQueue: ', myStackQueue);
+console.log("SQPeek: ", myStackQueue.peek());
+console.log("StackQueue: ", myStackQueue);

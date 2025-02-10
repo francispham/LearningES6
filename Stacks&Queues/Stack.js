@@ -4,7 +4,7 @@ class Node {
     this.value = value;
     this.next = null;
   }
-};
+}
 
 class Stack {
   constructor() {
@@ -19,7 +19,7 @@ class Stack {
 
   push(value) {
     const newNode = new Node(value);
-    if(this.length === 0) {
+    if (this.length === 0) {
       this.top = newNode;
       this.bottom = newNode;
     } else {
@@ -34,26 +34,26 @@ class Stack {
   pop() {
     if (!this.top) {
       return null;
-    };
+    }
     if (this.top === this.bottom) {
       this.bottom = null;
-    };
+    }
     this.top = this.top.next;
     this.length--;
     return this;
   }
-};
+}
 
 const myStack = new Stack();
-myStack.push('Google');
-myStack.push('Udemy');
-myStack.push('Discord');
+myStack.push("Google");
+myStack.push("Udemy");
+myStack.push("Discord");
 
-console.log('Peek: ', myStack.peek());
+console.log("Peek: ", myStack.peek());
 myStack.pop();
 myStack.pop();
 myStack.pop();
-console.log('After Removing 3 Items: ', myStack);
+console.log("After Removing 3 Items: ", myStack);
 
 /* Implementation Stack using Array */
 class StackArray {
@@ -73,13 +73,13 @@ class StackArray {
     this.array.pop();
     return this;
   }
-};
+}
 
 const myStackArray = new StackArray();
-myStackArray.push('Google');
-myStackArray.push('Udemy');
-myStackArray.push('Discord');
+myStackArray.push("Google");
+myStackArray.push("Udemy");
+myStackArray.push("Discord");
 myStackArray.pop();
 
-console.log('Stack from Array: ', myStackArray);
+console.log("Stack from Array: ", myStackArray);
 console.log("Peek: ", myStackArray.peek());

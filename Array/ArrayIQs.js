@@ -5,37 +5,36 @@
 */
 function reverse(str) {
   // Check Input:
-  if (!str || str.length < 2 || typeof str !== 'string') {
-    return 'Hmm That is not Good';
+  if (!str || str.length < 2 || typeof str !== "string") {
+    return "Hmm That is not Good";
   }
 
   // Operations:
   const backwards = [];
   const totalItems = str.length - 1;
-  for (let i = totalItems; i >=0; i--) {
+  for (let i = totalItems; i >= 0; i--) {
     backwards.push(str[i]);
-  };
+  }
   // console.log(backwards);
-  return backwards.join('');
+  return backwards.join("");
 }
 
 function reverse2(str) {
-  return str.split('').reverse().join('');
-};
+  return str.split("").reverse().join("");
+}
 
-const reverseES6 = str => str.split('').reverse().join('');
+const reverseES6 = (str) => str.split("").reverse().join("");
 
-const reverseES6Plus = str => [...str].reverse().join('');
+const reverseES6Plus = (str) => [...str].reverse().join("");
 
-console.log('Reverse 1: ',reverse('Hi My name is Francis'));
-console.log('Reverse 2: ',reverse2('Hi My name is Francis'));
-console.log('Reverse ES6: ',reverseES6('Hi My name is Francis'));
+console.log("Reverse 1: ", reverse("Hi My name is Francis"));
+console.log("Reverse 2: ", reverse2("Hi My name is Francis"));
+console.log("Reverse ES6: ", reverseES6("Hi My name is Francis"));
 
-console.log('Reverse ES6 Plus: ',reverseES6Plus('Hi My name is Francis'));
-console.log('------------------');
+console.log("Reverse ES6 Plus: ", reverseES6Plus("Hi My name is Francis"));
+console.log("------------------");
 
-
-/*  2. Merge Sorted Arrays Question: */ 
+/*  2. Merge Sorted Arrays Question: */
 function mergeSortedArray(array1, array2) {
   const mergedArray = [];
   let array1Item = array1[0];
@@ -46,10 +45,10 @@ function mergeSortedArray(array1, array2) {
   // Check Input:
   if (array1.length === 0) {
     return array2;
-  };
+  }
   if (array2.length === 0) {
     return array1;
-  };
+  }
 
   while (array1Item || array2Item) {
     if (!array2Item || array1Item < array2Item) {
@@ -59,17 +58,17 @@ function mergeSortedArray(array1, array2) {
     } else {
       mergedArray.push(array2Item);
       array2Item = array2[j];
-      j++
+      j++;
     }
   }
   return mergedArray;
 }
 
-console.log(mergeSortedArray([0,3,4], [1,4,6,20]));
+console.log(mergeSortedArray([0, 3, 4], [1, 4, 6, 20]));
 
-/* 3. Two Sum */ 
-/* 4. Maximum Subarray */ 
-/* 5. Move Zeroes */ 
-/* 6. Contains Duplicate */ 
-/* 7. Rotate Array */ 
-/* 8. Longest Word */ 
+/* 3. Two Sum */
+/* 4. Maximum Subarray */
+/* 5. Move Zeroes */
+/* 6. Contains Duplicate */
+/* 7. Rotate Array */
+/* 8. Longest Word */

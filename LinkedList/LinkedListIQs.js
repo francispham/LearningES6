@@ -5,8 +5,8 @@ class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
-  };
-};
+  }
+}
 
 class LinkedList {
   constructor(value) {
@@ -47,22 +47,22 @@ class LinkedList {
   reverse() {
     if (!this.head.next) {
       return this;
-    };
-    let first = this.head;          // first = 1
-    let second = first.next;        // second = 10
-    this.tail = this.head;          // head = 1 => ** Tail Node's Value: 1
+    }
+    let first = this.head; // first = 1
+    let second = first.next; // second = 10
+    this.tail = this.head; // head = 1 => ** Tail Node's Value: 1
     while (second) {
-      const temp = second.next;     //  temp Node= 5 => 16 => 17
-      second.next = first;          //  second.next Node= 1 => 10 => 5 => 16 => 17
-      first = second;               //  first Node= 10 => 5 => 16 => 17
-      second = temp;                //  second Node= 5 => 16 => 17
-    };
-    this.head.next = null;          // => ** Tail points to null. Same as:
+      const temp = second.next; //  temp Node= 5 => 16 => 17
+      second.next = first; //  second.next Node= 1 => 10 => 5 => 16 => 17
+      first = second; //  first Node= 10 => 5 => 16 => 17
+      second = temp; //  second Node= 5 => 16 => 17
+    }
+    this.head.next = null; // => ** Tail points to null. Same as:
     // this.tail.next = null;
-    this.head = first;              
+    this.head = first;
     return this;
   }
-};
+}
 
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);

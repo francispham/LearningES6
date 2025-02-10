@@ -18,15 +18,15 @@
 
 ```javascript
 function multiply(a) {
-    return (b) => {
-        return (c) => {
-            return a * b * c;
-        };
+  return (b) => {
+    return (c) => {
+      return a * b * c;
     };
-};
+  };
+}
 
 // ES6:
-const multiplyES6 = a => b => c => a * b * c;
+const multiplyES6 = (a) => (b) => (c) => a * b * c;
 
 console.log(multiply(1)(2)(3)); // 6
 console.log(multiplyES6(1)(2)(3)); // 6
@@ -38,5 +38,3 @@ console.log(multiplyES6(1)(2)(3)); // 6
 
 1. Always think about what you are doing, what your END GOALS are.
 2. Do not start Coding too early, think about the process & result.
-
-3. 

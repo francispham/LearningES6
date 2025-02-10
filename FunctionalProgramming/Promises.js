@@ -1,9 +1,9 @@
 /* Promises: */
 const myPromise = new Promise((resolve, reject) => {
   if (Math.random() * 100 <= 50) {
-    resolve('Hello, Promises!');
+    resolve("Hello, Promises!");
   }
-  reject(new Error('In 50% of the cases, I fail. Miserably.'));
+  reject(new Error("In 50% of the cases, I fail. Miserably."));
 });
 
 // Using Promises:
@@ -21,6 +21,5 @@ myPromise.then(
     console.log(error);
   }
 );
-
 
 /* Async/Await: */

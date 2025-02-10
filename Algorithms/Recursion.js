@@ -3,20 +3,19 @@
 2. Identify the Recursive Case
 3. Get closer and closer and 'return' when needed
 => Usually 2 'return' keywords are needed 
-*/ 
+*/
 
 let counter = 0;
 function inception() {
   if (counter > 3) {
-    return 'done!';
-  };
+    return "done!";
+  }
   counter++;
   // inception(); => without return keyword, this function will return Undefined
   return inception();
-};
+}
 
 inception();
-
 
 /*
 Interview Question:
@@ -26,30 +25,26 @@ the other should just use a for Loop.
 function findFactorialRecursive(number) {
   if (number === 2) {
     return 2;
-  };
+  }
 
   return number * findFactorialRecursive(number - 1);
-};
+}
 
 function findFactorialIterative(number) {
   let answer = 1;
   if (number === 2) {
     return 2;
-  };
+  }
   for (let i = 2; i <= number; i++) {
     answer = answer * i;
   }
 
   return answer;
-};
+}
 
 let AnswerRecursive = findFactorialRecursive(5);
 let AnswerIterative = findFactorialIterative(5);
-console.log(
-  'Recursive: ', AnswerRecursive,
-  ' Vs Iterative; ', AnswerIterative
-);
-
+console.log("Recursive: ", AnswerRecursive, " Vs Iterative; ", AnswerIterative);
 
 /*
 Interview Question: 
@@ -59,27 +54,30 @@ The Pattern of the Sequence is that each Value is the Sum of the 2 Previous Valu
 that means that for N = 5 => 2 + 3
 */
 
-function fibonacciIterative(n) {                        //  O(N)
+function fibonacciIterative(n) {
+  //  O(N)
   let arr = [0, 1];
   for (let i = 2; i < n + 1; i++) {
     arr.push(arr[i - 2] + arr[i - 1]);
-  };
+  }
   return arr[n];
-};
-let FibonacciIterative = fibonacciIterative(8);         //  O(2^N)
+}
+let FibonacciIterative = fibonacciIterative(8); //  O(2^N)
 
 function fibonacciRecursive(n) {
   if (n < 2) {
     return n;
   }
-  return fibonacciRecursive(n - 1) + fibonacciRecursive(n-2);
-};
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
 
 let FibonacciRecursive = fibonacciRecursive(8);
 
 console.log(
-  'FibonacciR: ', FibonacciRecursive,
-  ' Vs FibonacciI: ', FibonacciIterative
+  "FibonacciR: ",
+  FibonacciRecursive,
+  " Vs FibonacciI: ",
+  FibonacciIterative
 );
 
 /*

@@ -19,7 +19,7 @@ export const orders = [
   { amount: 400 },
   { amount: 100 },
   { amount: 325 },
-]; 
+];
 
 export const categories = [
   { id: "animals", parent: null },

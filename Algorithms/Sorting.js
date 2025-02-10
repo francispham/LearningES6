@@ -1,19 +1,18 @@
 const { merge } = require("lodash");
 
-/* JS Methods */ 
-const letters = ['a', 'd', 'c', 'e', 'r', 'b'];
-const  basket = [2, 54, 66, 33, 1, 3, 55, 5, 6, 7];
+/* JS Methods */
+const letters = ["a", "d", "c", "e", "r", "b"];
+const basket = [2, 54, 66, 33, 1, 3, 55, 5, 6, 7];
 
 letters.sort();
 // Sort Method will translate Number to Unicode before Sorting:
 basket.sort();
-'33'.charCodeAt(0);
+"33".charCodeAt(0);
 // To Sort basket Array:
 basket.sort(function (a, b) {
   return a - b;
-})
+});
 // The Time & Space Complexity of the Sort Method cannot be guaranteed as it is implementation dependent.
-
 
 /* Bubble Sort: */
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
@@ -22,11 +21,11 @@ function bubbleSort(array) {
   const length = array.length;
   for (let i = 0; i < length; i++) {
     for (let j = 0; j < length; j++) {
-      if(array[j] > array[j+1]) {
+      if (array[j] > array[j + 1]) {
         // Swap Numbers
         let temp = array[j];
         array[j] = array[j + 1];
-        array[j+1] = temp;
+        array[j + 1] = temp;
       }
     }
   }
@@ -34,7 +33,6 @@ function bubbleSort(array) {
 
 bubbleSort(numbers);
 console.log(numbers);
-
 
 /* Selection Sort: */
 function selection(array) {
@@ -57,8 +55,7 @@ function selection(array) {
 
 selection(numbers);
 
-
-/* Insertion Sort: */ 
+/* Insertion Sort: */
 function insertionSort(array) {
   const length = array.length;
   for (let i = 0; i < length; i++) {
@@ -80,25 +77,21 @@ function insertionSort(array) {
 insertionSort(numbers);
 console.log(numbers);
 
-
 /* Merge Sort: O(n log(n)) */
 function mergeSort(array) {
   if (array.length === 1) {
     return array;
-  };
+  }
   // Split Array into Right & Left
   const length = array.length;
   const middle = Math.floor(length / 2);
   const left = array.slice(0, middle);
   const right = array.slice(middle);
-  console.log('left:', left);
-  console.log('right:', right);
+  console.log("left:", left);
+  console.log("right:", right);
 
-  return merge(
-    mergeSort(left),
-    mergeSort(right)
-  );
-};
+  return merge(mergeSort(left), mergeSort(right));
+}
 
 function merge(left, right) {
   const result = [];
@@ -115,11 +108,10 @@ function merge(left, right) {
   }
   console.log(left, right);
   return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-};
+}
 
 const answer = mergeSort(numbers);
-console.log('answer:', answer);
-
+console.log("answer:", answer);
 
 /* Quick Sort: O(n log(n)) */
 function quickSort(array, left, right) {
@@ -133,9 +125,9 @@ function quickSort(array, left, right) {
     // Sort Left & Right
     quickSort(array, left, partitionIndex - 1);
     quickSort(array, partitionIndex + 1, right);
-  };
+  }
   return array;
-};
+}
 
 function partition(array, pivot, left, right) {
   let pivotValue = array[pivot];
@@ -145,18 +137,18 @@ function partition(array, pivot, left, right) {
     if (array[i] < pivotValue) {
       swap(array, i, partitionIndex);
       partitionIndex++;
-    };
-  };
+    }
+  }
   swap(array, right, partitionIndex);
   return partitionIndex;
-};
+}
 
 function swap(array, firstIndex, secondIndex) {
   let temp = array[firstIndex];
   array[firstIndex] = array[secondIndex];
   array[secondIndex] = temp;
-};
+}
 
 // Select First & Last Index as 2nd & 3rd Parameters:
 quickSort(numbers, 0, numbers.length - 1);
-console.log('numbers:', numbers);
+console.log("numbers:", numbers);

@@ -11,8 +11,8 @@ function logGreeting(fn) {
 logGreeting(greet);
 
 // Function Expression
-var greetMe = function() {
-  console.log('Hi Francis');
+var greetMe = function () {
+  console.log("Hi Francis");
 };
 greetMe();
 
@@ -20,10 +20,9 @@ greetMe();
 logGreeting(greetMe);
 
 // Use a function expression on the fly
-logGreeting(function() {
-  console.log('Hello Francis!');
+logGreeting(function () {
+  console.log("Hello Francis!");
 });
-
 
 // Immediately Invoked Function Expression:
 var firstname = "Francis";
@@ -32,7 +31,6 @@ var firstname = "Francis";
   var firstname = "Phong";
   console.log(firstname);
   console.log(lastname);
-}('Pham'));
+})("Pham");
 
 console.log(firstname);
-

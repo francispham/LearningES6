@@ -15,7 +15,7 @@ class MyArray {
   }
 
   pop() {
-    const lastItem = this.data[this.length-1];
+    const lastItem = this.data[this.length - 1];
     delete this.data[this.length - 1];
     this.length--;
     return lastItem;
@@ -23,27 +23,27 @@ class MyArray {
 
   delete(index) {
     const item = this.data[index];
-    console.log('Item: ', item);
+    console.log("Item: ", item);
     this.shiftItems(index);
   }
 
   shiftItems(index) {
     for (let i = index; i < this.length - 1; i++) {
-      this.data[i] = this.data[i+1];
-    };
-    delete this.data[this.length-1];
+      this.data[i] = this.data[i + 1];
+    }
+    delete this.data[this.length - 1];
     this.length--;
   }
-};
+}
 
 const newArray = new MyArray();
-newArray.push('Hi');
-newArray.push('You');
-newArray.push('!');
+newArray.push("Hi");
+newArray.push("You");
+newArray.push("!");
 newArray.delete(0);
-newArray.push('are');
-newArray.push('nice');
-newArray.push('nice');
+newArray.push("are");
+newArray.push("nice");
+newArray.push("nice");
 newArray.delete(1);
 newArray.pop();
 

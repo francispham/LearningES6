@@ -1,7 +1,6 @@
 class HashTable {
   constructor(size) {
     this.data = new Array(size);
-
   }
 
   // Kind of Hash Function:
@@ -9,7 +8,7 @@ class HashTable {
     let hash = 0;
     for (let i = 0; i < key.length; i++) {
       hash = (hash + key.charCodeAt(i) * i) % this.data.length;
-    };
+    }
     return hash;
   }
 
@@ -19,8 +18,8 @@ class HashTable {
       this.data[address] = [];
     }
     this.data[address].push([key, value]);
-    return this.data
-  }   // O(1)
+    return this.data;
+  } // O(1)
 
   get(key) {
     let address = this._hash(key);
@@ -31,7 +30,7 @@ class HashTable {
           return currentBucket[i][1]; //  [1] is the Value of the Object
         }
       }
-    }   // O(1)
+    } // O(1)
 
     return undefined;
   }
@@ -39,13 +38,13 @@ class HashTable {
   keys() {
     const keysArray = [];
     for (let i = 0; i < this.data.length; i++) {
-      if(this.data[i]) {
+      if (this.data[i]) {
         // console.log(this.data[i]);
         keysArray.push(this.data[i][0][0]);
-      };
-    };
+      }
+    }
     return keysArray;
-  };
+  }
 
   // Keys Without Hash Collision:
   keysEnhanced() {
@@ -69,19 +68,19 @@ class HashTable {
     }
     return result;
   }
-};
+}
 
 const myHashTable = new HashTable(50);
 
-myHashTable.set('grapes', 10000);
-myHashTable.set('apple', 45);
-myHashTable.set('orange', 2);
+myHashTable.set("grapes", 10000);
+myHashTable.set("apple", 45);
+myHashTable.set("orange", 2);
 
-console.log('Keys: ', myHashTable.keys());
-console.log('Keys Enhanced: ', myHashTable.keysEnhanced());
+console.log("Keys: ", myHashTable.keys());
+console.log("Keys Enhanced: ", myHashTable.keysEnhanced());
 
-console.log('Get Value of Apple: ', myHashTable.get('apple'));
+console.log("Get Value of Apple: ", myHashTable.get("apple"));
 
-console.log("Grapes' Hash: ", myHashTable._hash('grapes'));
+console.log("Grapes' Hash: ", myHashTable._hash("grapes"));
 
-console.log('Buckets: ', myHashTable.data);
+console.log("Buckets: ", myHashTable.data);

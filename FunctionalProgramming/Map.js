@@ -1,4 +1,4 @@
-import { animals } from '../index.js';
+import { animals } from "../index.js";
 
 // Introduced Map Method:
 let mapNames = animals.map(function (animal) {
@@ -8,8 +8,10 @@ console.log(mapNames);
 console.log("---");
 
 // ES6 Map Method:
-let mapNamesES6 = animals.map(animal => animal.name + " is a " + animal.species);
-console.log('ES6 Map Method: ', mapNamesES6);
+let mapNamesES6 = animals.map(
+  (animal) => animal.name + " is a " + animal.species
+);
+console.log("ES6 Map Method: ", mapNamesES6);
 console.log("---");
 
 // With For Loop:

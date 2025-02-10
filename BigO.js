@@ -1,4 +1,4 @@
-                  /*  Big O: https://www.bigocheatsheet.com/ */
+/*  Big O: https://www.bigocheatsheet.com/ */
 
 /* 
 ARRAYS:
@@ -16,22 +16,21 @@ ARRAYS:
 
   SPACE: O(n)
 */
-const strings = ['a', 'b', 'c', 'd'];      // 4*4 = 16 Bytes of Storage
+const strings = ["a", "b", "c", "d"]; // 4*4 = 16 Bytes of Storage
 
 // push
-strings.push('e');                  // O(1);
+strings.push("e"); // O(1);
 
 // pop
-strings.pop();                      //O(1)
+strings.pop(); //O(1)
 
 // unshift
-strings.unshift('x');               // O(n)
+strings.unshift("x"); // O(n)
 
 // splice
-strings.splice(2, 0, 'alien');      // O(n)
+strings.splice(2, 0, "alien"); // O(n)
 
-console.log('String: ', strings);
-
+console.log("String: ", strings);
 
 /*
 HASH TABLES Operation:
@@ -43,22 +42,21 @@ HASH TABLES Operation:
   SPACE:    O(n)
 
 => Hash Table are used to solve Nested Looping.
-*/ 
+*/
 let user = {
   age: 31,
-  name: 'Francis',
+  name: "Francis",
   magic: true,
-  scream: function() {
-    console.log('Hello MEO!');
-  }
+  scream: function () {
+    console.log("Hello MEO!");
+  },
 };
 
-user.age;                          // O(1)
-user.spell = 'Umbala';             // O(1)
-user.scream();                     // O(1)
+user.age; // O(1)
+user.spell = "Umbala"; // O(1)
+user.scream(); // O(1)
 
 // Hash Collision:                 // O(n)
-
 
 /*
 LINKED LISTS:
@@ -77,12 +75,11 @@ LINKED LISTS:
     DELETE:    O(n)
 */
 const obj1 = { a: true };
-const obj2 = obj1;  //  Obj2 is a Pointer because it prefer to Obj1.
-obj1.a = 'booya';   //  And both point to the same Location in Memory.
+const obj2 = obj1; //  Obj2 is a Pointer because it prefer to Obj1.
+obj1.a = "booya"; //  And both point to the same Location in Memory.
 
-console.log('Obj1: ', obj1)
-console.log('Obj2: ', obj2)
-
+console.log("Obj1: ", obj1);
+console.log("Obj2: ", obj2);
 
 /*
 STACKS Operations:
@@ -94,7 +91,6 @@ STACKS Operations:
 LIFO
 */
 
-
 /*
 QUEUES Operations:
   LOOKUP:    O(n)
@@ -103,8 +99,7 @@ QUEUES Operations:
   PEEK:      O(1)
 
 FIFO
-*/ 
-
+*/
 
 /*
 TREES:
