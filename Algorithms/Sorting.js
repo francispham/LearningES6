@@ -1,26 +1,30 @@
-const { merge } = require("lodash");
-
-/* JS Methods */
+/* JS Methods O(n log(n))*/
 const letters = ["a", "d", "c", "e", "r", "b"];
 const basket = [2, 54, 66, 33, 1, 3, 55, 5, 6, 7];
 
-letters.sort();
+console.log("Letters: ", letters.sort());
+
 // Sort Method will translate Number to Unicode before Sorting:
-basket.sort();
+console.log("Incorrect Basket: ", basket.sort());
+
 "33".charCodeAt(0);
 // To Sort basket Array:
-basket.sort(function (a, b) {
-  return a - b;
-});
+console.log(
+  "Correct Basket: ",
+  basket.sort(function (a, b) {
+    return a - b;
+  })
+);
+
 // The Time & Space Complexity of the Sort Method cannot be guaranteed as it is implementation dependent.
 
-/* Bubble Sort: */
+/* Bubble Sort O(n^2) */
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function bubbleSort(array) {
   const length = array.length;
   for (let i = 0; i < length; i++) {
-    for (let j = 0; j < length; j++) {
+    for (let j = 0; j < length - 1; j++) {
       if (array[j] > array[j + 1]) {
         // Swap Numbers
         let temp = array[j];
@@ -29,12 +33,11 @@ function bubbleSort(array) {
       }
     }
   }
+  return array;
 }
+// console.log("Bubble Sort:", bubbleSort(numbers));
 
-bubbleSort(numbers);
-console.log(numbers);
-
-/* Selection Sort: */
+/* Selection Sort O(n^2) */
 function selection(array) {
   const length = array.length;
   for (let i = 0; i < length; i++) {
@@ -52,10 +55,9 @@ function selection(array) {
   }
   return array;
 }
+// console.log("Selection Sort:", selection(numbers));
 
-selection(numbers);
-
-/* Insertion Sort: */
+/* Insertion Sort O(n) -> O(n^2) */
 function insertionSort(array) {
   const length = array.length;
   for (let i = 0; i < length; i++) {
@@ -72,10 +74,9 @@ function insertionSort(array) {
       }
     }
   }
+  return array;
 }
-
-insertionSort(numbers);
-console.log(numbers);
+// console.log("Insertion Sort:", insertionSort(numbers));
 
 /* Merge Sort: O(n log(n)) */
 function mergeSort(array) {
@@ -87,8 +88,8 @@ function mergeSort(array) {
   const middle = Math.floor(length / 2);
   const left = array.slice(0, middle);
   const right = array.slice(middle);
-  console.log("left:", left);
-  console.log("right:", right);
+  // console.log("left:", left);
+  // console.log("right:", right);
 
   return merge(mergeSort(left), mergeSort(right));
 }
@@ -106,12 +107,11 @@ function merge(left, right) {
       rightIndex++;
     }
   }
-  console.log(left, right);
+  // console.log(left, right);
   return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
 
-const answer = mergeSort(numbers);
-console.log("answer:", answer);
+// console.log("Merge Sort:", mergeSort(numbers));
 
 /* Quick Sort: O(n log(n)) */
 function quickSort(array, left, right) {
@@ -150,5 +150,4 @@ function swap(array, firstIndex, secondIndex) {
 }
 
 // Select First & Last Index as 2nd & 3rd Parameters:
-quickSort(numbers, 0, numbers.length - 1);
-console.log("numbers:", numbers);
+console.log("Quick Sort:", quickSort(numbers, 0, numbers.length - 1));

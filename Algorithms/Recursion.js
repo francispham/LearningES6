@@ -14,8 +14,7 @@ function inception() {
   // inception(); => without return keyword, this function will return Undefined
   return inception();
 }
-
-inception();
+// console.log("Inception:", inception());
 
 /*
 Interview Question:
@@ -44,7 +43,7 @@ function findFactorialIterative(number) {
 
 let AnswerRecursive = findFactorialRecursive(5);
 let AnswerIterative = findFactorialIterative(5);
-console.log("Recursive: ", AnswerRecursive, " Vs Iterative; ", AnswerIterative);
+// console.log("Recursive: ", AnswerRecursive, " Vs Iterative: ", AnswerIterative);
 
 /*
 Interview Question: 
@@ -72,13 +71,12 @@ function fibonacciRecursive(n) {
 }
 
 let FibonacciRecursive = fibonacciRecursive(8);
-
-console.log(
-  "FibonacciR: ",
-  FibonacciRecursive,
-  " Vs FibonacciI: ",
-  FibonacciIterative
-);
+// console.log(
+//   "FibonacciR: ",
+//   FibonacciRecursive,
+//   " Vs FibonacciI: ",
+//   FibonacciIterative
+// );
 
 /*
 Implement a function that reverses a string using iteration...and then recursion!
@@ -110,5 +108,4 @@ function reverseStringRecursive(str) {
 }
 
 const ReverseStringRecursive = reverseStringRecursive("yoyo master");
-
 console.log("RS: ", ReverseString, " Vs RSR: ", ReverseStringRecursive);

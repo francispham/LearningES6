@@ -1,6 +1,6 @@
 // Function statement
 function greet() {
-  console.log("hi");
+  console.log("hi inside greet function");
 }
 greet();
 
@@ -29,8 +29,8 @@ var firstname = "Francis";
 
 (function (lastname) {
   var firstname = "Phong";
-  console.log(firstname);
-  console.log(lastname);
+  console.log("First Name: ", firstname);
+  console.log("Last Name: ", lastname);
 })("Pham");
 
-console.log(firstname);
+console.log("Original First Name: ", firstname);

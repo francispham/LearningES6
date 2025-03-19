@@ -38,3 +38,9 @@ console.log(multiplyES6(1)(2)(3)); // 6
 
 1. Always think about what you are doing, what your END GOALS are.
 2. Do not start Coding too early, think about the process & result.
+
+### How to use this document
+
+1. Use liveServer to open `home.html`
+2. Add a JS file into the `script src` inside `home.html`
+3. Use `inspector` to test the `console.log` result
