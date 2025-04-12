@@ -1,7 +1,6 @@
 /*  Big O: https://www.bigocheatsheet.com/ */
 
-/* 
-ARRAYS:
+/* ARRAYS:
   + Static Array Operations: 
     LOOKUP:   O(1)
     PUSH:     O(1)
@@ -32,8 +31,7 @@ strings.splice(2, 0, "alien"); // O(n)
 
 console.log("String: ", strings);
 
-/*
-HASH TABLES Operation:
+/* HASH TABLES Operation:
   LOOKUP:   O(1)  Incase of Hash Collusion, LOOKUP becomes TRAVERSE:   O(N)
   SEARCH:   O(1)
   INSERT:   O(1)
@@ -58,8 +56,7 @@ user.scream(); // O(1)
 
 // Hash Collision:                 // O(n)
 
-/*
-LINKED LISTS:
+/* LINKED LISTS:
   + Single Linked List Operations:
     PREPEND:   O(1)
     APPEND:    O(1)
@@ -81,8 +78,7 @@ obj1.a = "booya"; //  And both point to the same Location in Memory.
 console.log("Obj1: ", obj1);
 console.log("Obj2: ", obj2);
 
-/*
-STACKS Operations:
+/* STACKS Operations:
   LOOKUP:    O(n)
   POP:       O(1)
   PUSH:      O(1)
@@ -91,18 +87,15 @@ STACKS Operations:
 LIFO
 */
 
-/*
-QUEUES Operations:
+/* QUEUES Operations:
   LOOKUP:    O(n)
   ENQUEUE:   O(1)
   DEQUEUE:   O(1)
   PEEK:      O(1)
-
 FIFO
 */
 
-/*
-TREES:
+/* TREES:
   + Binary Search Tree Operations:
     LOOKUP:    O(log N)
     INSERT:    O(log N)
