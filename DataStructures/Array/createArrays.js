@@ -48,3 +48,5 @@ newArray.delete(1);
 newArray.pop();
 
 console.log(newArray);
+
+/* Static (eg. C++) vs Dynamic Arrays (eg. JS) */

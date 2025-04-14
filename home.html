@@ -4,15 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./InterviewPatterns.js" defer></script>
+    <style>
+      div {
+        display: flex;
+        margin: 1rem;
+        padding: 1rem;
+        border: 3px solid black;
+        border-radius: 5px;
+        min-height: 1rem;
+        flex-grow: 1;
+      }
+      .grandparent {
+        background-color: red;
+        flex-direction: column;
+      }
+      .parent {
+        background-color: green;
+      }
+      .child {
+        background-color: blue;
+      }
+    </style>
+    <script src="./DataStructures/HashTable/HashTableIQs.js" defer></script>
     <title>Document</title>
   </head>
   <body>
+    <!-- DOM Manipulation -->
     <div>
       <span>Inner Vs Content</span>
       <span title="Title" id="Id" data-test="This is a Test"
         >Manipulate Attribute</span
       >
+    </div>
+    <!-- DOM Traversal -->
+    <div class="grandparent">
+      <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
+      <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+      </div>
     </div>
   </body>
 </html>

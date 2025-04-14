@@ -70,7 +70,7 @@ class HashTable {
   }
 }
 
-const myHashTable = new HashTable(50);
+const myHashTable = new HashTable(50); // 50 is the Size of the Hash Table
 
 myHashTable.set("grapes", 10000);
 myHashTable.set("apple", 45);

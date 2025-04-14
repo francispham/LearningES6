@@ -25,21 +25,18 @@ function firstRecurringCharacter(input) {
 function firstRecurringCharacterHT(input) {
   let map = {}; // O(n) in Space Complexity
   for (let i = 0; i < input.length; i++) {
-    // console.log(map[input[i]]);
-    // console.log(input[i]);
-
     if (map[input[i]] !== undefined) {
       return input[i];
     } else {
+      // Add the Item to the Hash Table:
       map[input[i]] = i;
     }
-    // console.log(map);
   }
   return undefined;
 } // O(n) Time Complexity     &&    O(n) Space Complexity
 
-// console.log(firstRecurringCharacter([2, 5, 1, 2, 3, 5, 1, 2, 4]));
-console.log("Q1: ", firstRecurringCharacterHT([2, 5, 1, 2, 3, 5, 1, 2, 4]));
+console.log(firstRecurringCharacter([2, 5, 5, 1, 2, 3, 1, 2, 4]));
+console.log("Q1: ", firstRecurringCharacterHT([2, 5, 5, 1, 2, 3, 5, 1, 2, 4]));
 
 /*
 Question 2: 

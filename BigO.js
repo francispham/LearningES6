@@ -21,12 +21,12 @@ const strings = ["a", "b", "c", "d"]; // 4*4 = 16 Bytes of Storage
 strings.push("e"); // O(1);
 
 // pop
-strings.pop(); //O(1)
+strings.pop(); // O(1)
 
 // unshift
 strings.unshift("x"); // O(n)
 
-// splice
+// splice (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 strings.splice(2, 0, "alien"); // O(n)
 
 console.log("String: ", strings);
@@ -39,7 +39,7 @@ console.log("String: ", strings);
 
   SPACE:    O(n)
 
-=> Hash Table are used to solve Nested Looping.
+=> Hash Table are used to solve Nested Looping. Fast Access but More Memory Used.
 */
 let user = {
   age: 31,
@@ -54,7 +54,13 @@ user.age; // O(1)
 user.spell = "Umbala"; // O(1)
 user.scream(); // O(1)
 
-// Hash Collision:                 // O(n)
+// Map Object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+const map = new Map();
+
+// Set Object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+const set = new Set();
+
+// Hash Collision: when key & value are stored in the same bucket. LOOKUP => O(n)
 
 /* LINKED LISTS:
   + Single Linked List Operations:
