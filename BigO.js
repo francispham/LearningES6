@@ -91,6 +91,7 @@ console.log("Obj2: ", obj2);
   PEEK:      O(1)
 
 LIFO
+Created from Array or Linked List
 */
 
 /* QUEUES Operations:
@@ -98,7 +99,9 @@ LIFO
   ENQUEUE:   O(1)
   DEQUEUE:   O(1)
   PEEK:      O(1)
+
 FIFO
+Created from Linked List only
 */
 
 /* TREES:
