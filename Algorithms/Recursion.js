@@ -4,22 +4,21 @@
   + Simply it's a function that refers to itself inside of that function.
   + Anything that can be done with recursion can also be done with iteration.
 
-  + PROS:
-    1. Easy to understand
-    2. Easy to implement
-  + CONS:
-    1. Slow
-    2. Large call stack
+    - PROS:
+      1. Easy to understand
+      2. Easy to implement
+    - CONS:
+      1. Slow
+      2. Large call stack
+      => Tail Call Optimization: https://2ality.com/2015/06/tail-call-optimization.html
 
-    + Tail Call Optimization: https://2ality.com/2015/06/tail-call-optimization.html
+  + How to write a Recursive Function: 
+    1. Identify the Base Case ( A Conditional Statement )
+    2. Identify the Recursive Case
+    3. Get closer and closer and 'return' when needed
+    => Usually 2 'return' keywords are needed!!!
 
-    + How to write a Recursive Function: 
-      1. Identify the Base Case ( A Conditional Statement )
-      2. Identify the Recursive Case
-      3. Get closer and closer and 'return' when needed
-      => Usually 2 'return' keywords are needed!!!
-
-    + Rule:
+  + Rule:
     Every time you are using a tree or converting something into a tree, consider RECURSION.
       1. Divided into a number of subproblem that are similar to the original problem
       2. Each instance of the subproblem is identical in nature.
@@ -104,6 +103,7 @@ let FibonacciRecursive = fibonacciRecursive(8);
 function reverseString(str) {
   let arrayStr = str.split("");
   let reversedArray = [];
+
   //We are using closure here so that we don't add the above variables to the global scope.
   function addToArray(array) {
     if (array.length > 0) {
