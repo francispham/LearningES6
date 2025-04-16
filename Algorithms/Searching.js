@@ -1,18 +1,13 @@
 /* SEARCHING/TRAVERSAL ALGORITHMS
-1. If you know a solution is not far form the Root of the Tree: BFS
-
-2. if the Tree is very Deep and Solution are Rare: BFS (DFS will take very long)
-
-3. If the Tree is very wide: DFS (BFS will need too much Memory)
-
-4. If Solutions are frequent but located Deep in the Tree: DFS
-
-5. Determining whether a Path exists between two Nodes: DFS
-
-6. Finding the Shortest Path: BFS
+  1. If you know a solution is not far form the Root of the Tree: BFS
+  2. if the Tree is very Deep and Solution are Rare: BFS (DFS will take very long)
+  3. If the Tree is very wide: DFS (BFS will need too much Memory)
+  4. If Solutions are frequent but located Deep in the Tree: DFS
+  5. Determining whether a Path exists between two Nodes: DFS
+  6. Finding the Shortest Path: BFS
 */
 
-/* Linear Search */
+/* Linear Search: Time - O(n) | Space - O(1) */
 
 const beasts = ["Centaur", "Godzilla", "Mosura", "Minotaur", "Hydra", "Nessie"];
 
@@ -28,19 +23,34 @@ beasts.find((item) => {
 
 beasts.includes("Godzilla");
 
-/* Binary Search */
+/* Binary Search: Time - O(log n) | Space - O(1) */
 
 const numbers = [
   1, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
 ];
 
 function binarySearch(array, num) {
-  console.log("Array: ", array, "Num: ", num);
+  let start = 0;
+  let end = array.length - 1;
+
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    if (array[mid] === num) {
+      return mid;
+    } else if (array[mid] < num) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+  return -1;
 }
 
-console.log(binarySearch(numbers, 37));
+// console.log(binarySearch(numbers, 37));
 
-/* Binary Search Tree */
+/* Binary Search Tree 
+  Notes: https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
+*/
 
 class Node {
   constructor(value) {
@@ -172,7 +182,13 @@ class BinarySearchTree {
     }
   }
 
-  /* Breadth First Search */
+  /* Breadth First Search
+    + PROS:
+      - Shortest Path
+      - Closer Nodes
+    + CONS:
+      - More Memory
+  */
   breadthFirstSearch() {
     let currentNode = this.root;
     let list = [];
@@ -181,7 +197,6 @@ class BinarySearchTree {
 
     while (queue.length > 0) {
       currentNode = queue.shift();
-      console.log(currentNode.value);
       list.push(currentNode.value);
       if (currentNode.left) {
         queue.push(currentNode.left);
@@ -204,11 +219,16 @@ class BinarySearchTree {
     if (currentNode.right) {
       queue.push(currentNode.right);
     }
-
-    return this.BreadthFirstSearchR(queue, list);
+    return this.breadthFirstSearchR(queue, list);
   }
 
-  /* Depth First Search */
+  /* Depth First Search 
+    + PROS:
+      - Less Memory
+      - Determines if the Path Exists
+    + CONS:
+      - Can be slower
+  */
   DFSInOrder() {
     return traverseInOrder(this.root, []);
   }
@@ -246,7 +266,6 @@ function traversePreOrder(node, list) {
 }
 
 function traversePostOrder(node, list) {
-  console.log(node.value);
   if (node.left) {
     traversePostOrder(node.left, list);
   }
