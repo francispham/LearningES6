@@ -70,7 +70,7 @@ const set = new Set();
     INSERT:    O(n)
     DELETE:    O(n)
     
-  + Doubly Linked List Operations:
+  + Doubly Linked List Operations: (Allow to traverse backward because it contains an additional pointer to the previous node)
     PREPEND:   O(1)
     APPEND:    O(1)
     LOOKUP:    O(n) => Faster than Single Linked List. O(n/2) -> O(n)
@@ -106,15 +106,56 @@ Created from Linked List only
 
 /* TREES:
   + Binary Search Tree Operations:
-    LOOKUP:    O(log N)
-    INSERT:    O(log N)
-    DELETE:    O(log N)
+    - Balanced Tree:
+      LOOKUP:    O(log n)
+      INSERT:    O(log n)
+      DELETE:    O(log n)
 
-  + Binary Heap Tree Operations:
+    - Unbalanced Tree (Become a Linked List):
+      LOOKUP:    O(n)
+      INSERT:    O(n)
+      DELETE:    O(n)
+
+  + Binary Heap Tree Operations (Left and Right node are not sorted just need to be smaller than the parent node):
     LOOKUP:    O(n)
-    INSERT:    O(log N)
-    DELETE:    O(log N)
+    INSERT:    O(log n)
+    DELETE:    O(log n)
+  => Used for Priority Queue (Elements with higher priority are processed first)
 
-  + Trie Tree Operations (Used in TEXT Searching):
-    O(Length of the Word)
+  + Trie Tree Operations (Used in TEXT Searching): O(Length of the Word)
+
+  + AVL Tree & Red-Black Tree Operations (Self-Balanced Binary Search Tree: https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/learn/lecture/12368622#notes):
+    LOOKUP:    O(log n)
+    INSERT:    O(log n)
+    DELETE:    O(log n)
 */
+
+/* GRAPHS:
+  + Directed vs Undirected Graphs
+  + Weighted (has path distance)  vs Unweighted Graphs (no path distance)
+  + Cyclic (Has a Loop) vs Acyclic Graphs (Has no Loop)
+  + Graph Traversal Algorithms:
+    - Depth First Search (DFS): O(V + E)
+    - Breadth First Search (BFS): O(V + E)
+*/
+
+// Edge List
+const ELGraph = [
+  [0, 2],
+  [2, 3],
+  [2, 1],
+  [1, 3],
+];
+
+// Adjacent List
+const ALGraph = [[2], [2, 3], [0, 1, 3], [1, 2]];
+
+// Adjacent Matrix
+const AMGraph = [
+  [0, 0, 1, 0],
+  [0, 0, 1, 1],
+  [1, 1, 0, 1],
+  [0, 1, 1, 0],
+];
+
+/* Data Structures Map: https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link */

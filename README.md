@@ -34,13 +34,17 @@ console.log(multiplyES6(1)(2)(3)); // 6
 
 11. Recursion is when a Function calls itself until it doesn't
 
-### Coding Tips
+## Coding Tips
 
 1. Always think about what you are doing, what your END GOALS are.
 2. Do not start Coding too early, think about the process & result.
 
-### How to use this document
+## How to use this document
 
 1. Use liveServer to open `home.html`
 2. Add a JS file into the `script src` inside `home.html`
 3. Use `inspector` to test the `console.log` result
+
+## ZTM Master the Coding Interview
+
+1. ZTM Github Link: https://github.com/aneagoie/ztm-master-the-coding-interview-ds-algo
