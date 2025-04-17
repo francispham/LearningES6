@@ -1,10 +1,10 @@
 /* SEARCHING/TRAVERSAL ALGORITHMS
-  1. If you know a solution is not far form the Root of the Tree: BFS
-  2. if the Tree is very Deep and Solution are Rare: BFS (DFS will take very long)
-  3. If the Tree is very wide: DFS (BFS will need too much Memory)
-  4. If Solutions are frequent but located Deep in the Tree: DFS
-  5. Determining whether a Path exists between two Nodes: DFS
-  6. Finding the Shortest Path: BFS
+  1. If you know a solution is not far form the Root of the Tree:     BFS
+  2. if the Tree is very Deep and Solution are Rare:                  BFS (DFS will take very long)
+  3. If the Tree is very wide:                                        DFS (BFS will need too much Memory)
+  4. If Solutions are frequent but located Deep in the Tree:          DFS
+  5. Determining whether a Path exists between two Nodes:             DFS
+  6. Finding the Shortest Path:                                       BFS
 */
 
 /* Linear Search: Time - O(n) | Space - O(1) */
@@ -188,6 +188,9 @@ class BinarySearchTree {
       - Closer Nodes
     + CONS:
       - More Memory
+
+  => BFS If you have additional information on the location of the target node, 
+      and the node is likely in the upper level of a tree.
   */
   breadthFirstSearch() {
     let currentNode = this.root;
@@ -198,6 +201,7 @@ class BinarySearchTree {
     while (queue.length > 0) {
       currentNode = queue.shift();
       list.push(currentNode.value);
+
       if (currentNode.left) {
         queue.push(currentNode.left);
       }
@@ -205,12 +209,14 @@ class BinarySearchTree {
         queue.push(currentNode.right);
       }
     }
+    return list;
   }
-  breadthFirstSearchR(queue, list) {
+  breadthFirstSearchRecursive(queue, list) {
     if (!queue.length) {
       return list;
     }
-    const currentNode = queue.shift();
+
+    let currentNode = queue.shift();
     list.push(currentNode.value);
 
     if (currentNode.left) {
@@ -219,7 +225,7 @@ class BinarySearchTree {
     if (currentNode.right) {
       queue.push(currentNode.right);
     }
-    return this.breadthFirstSearchR(queue, list);
+    return this.breadthFirstSearchRecursive(queue, list);
   }
 
   /* Depth First Search 
@@ -241,26 +247,12 @@ class BinarySearchTree {
 }
 
 function traverseInOrder(node, list) {
-  console.log(node.value);
   if (node.left) {
     traverseInOrder(node.left, list);
   }
   list.push(node.value);
   if (node.right) {
     traverseInOrder(node.right, list);
-  }
-  return list;
-}
-
-function traversePreOrder(node, list) {
-  console.log(node.value);
-  list.push(node.value);
-  if (node.left) {
-    traversePreOrder(node.left, list);
-  }
-
-  if (node.right) {
-    traversePreOrder(node.right, list);
   }
   return list;
 }
@@ -277,6 +269,18 @@ function traversePostOrder(node, list) {
   return list;
 }
 
+function traversePreOrder(node, list) {
+  list.push(node.value);
+  if (node.left) {
+    traversePreOrder(node.left, list);
+  }
+
+  if (node.right) {
+    traversePreOrder(node.right, list);
+  }
+  return list;
+}
+
 const tree = new BinarySearchTree();
 tree.insert(9);
 tree.insert(4);
@@ -285,14 +289,24 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-tree.remove(170);
+// tree.remove(170);
 JSON.stringify(traverse(tree.root));
 tree.breadthFirstSearch();
-tree.breadthFirstSearchR([tree.root], []);
-tree.DFSPostOrder();
-//     9
-//  4     20
-//1  6  15  170
+tree.breadthFirstSearchRecursive([tree.root], []);
+tree.DFSInOrder();
+// console.log("Traverse: ", tree.DFSPostOrder());
+
+/* Notes 
+      9
+  4       20
+1   6   15    170
+
+=> BFS: [9, 4, 20, 1, 6, 15, 170]
+=> DFS: [9, 4, 1, 6, 20, 15, 170]
+=> DFS In Order: [1, 4, 6, 9, 15, 20, 170]
+=> DFS Pre Order: [9, 4, 1, 6, 20, 15, 170]
+=> DFS Post Order: [1, 6, 4, 15, 170, 20, 9]
+*/
 
 function traverse(node) {
   const tree = { value: node.value };
